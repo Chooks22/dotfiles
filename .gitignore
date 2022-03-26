@@ -1,0 +1,20 @@
+# exclude everything by default
+/*
+
+# include required files
+!.gitignore
+!README.md
+!Makefile
+!install
+
+# include profiles
+!xinitrc
+!xprofile
+!zshrc
+!vimrc
+!aliasrc
+
+# include configs
+!rofi
+!kitty
+!picom

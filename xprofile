@@ -1,0 +1,18 @@
+#! /bin/sh
+export EDITOR=vim
+
+picom -b
+slstatus &
+flameshot &
+
+# Swap esc <-> caps
+setxkbmap -option caps:swapescape
+
+# Set bg
+[ -f ~/.fehbg ] && ~/.fehbg
+
+# Enable keyring
+if command -v gnome-keyring-daemon &> /dev/null; then
+  eval $(gnome-keyring-daemon --start)
+  export SSH_AUTH_LOCK
+fi

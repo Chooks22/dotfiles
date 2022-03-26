@@ -1,0 +1,92 @@
+window {
+  /* remove padding of window. same as body in html */
+  padding: 0;
+  background-color: var(color-bg);
+  border: 0;
+}
+
+* {
+  /* theme palette */
+  color-bg: #2e2946;
+  color-fg: #dddde5;
+  color-selected-bg: #3f375b;
+  color-selected-fg: #d5ced9;
+  color-light-fg: #7f729c;
+  color-search-bg: #1e1d31;
+  color-scrollbar: #67569050;
+
+  /* center all text */
+  vertical-align: 0.5;
+}
+
+inputbar {
+  padding: 8px 16px 8px 9px;
+  background-color: var(color-search-bg);
+
+  children:   [
+    prompt,
+    textbox-prompt-colon,
+    entry,
+    num-filtered-rows,
+    textbox-num-sep,
+    num-rows
+  ];
+}
+
+prompt, textbox-prompt-colon, entry {
+  text-color: var(color-fg);
+}
+
+num-filtered-rows, textbox-num-sep, num-rows {
+  text-color: var(color-light-fg);
+}
+
+/* search bar */
+entry {
+  padding: 4px 6px;
+  margin: 0 32px 0 0;
+
+  border-radius: 3px;
+
+  background-color: var(color-bg);
+  placeholder-color: var(color-light-fg);
+}
+
+listview {
+  padding: 4px;
+  margin: -2px 0 0 0;
+
+  lines: 12;
+  border: 0;
+}
+
+scrollbar {
+  /* remove padding offset from listview */
+  margin: -4px -4px -4px -2px;
+
+  border: 0 0 0 1px;
+  border-color: var(color-scrollbar);
+
+  handle-width: 12px;
+  handle-color: var(color-scrollbar);
+}
+
+element {
+  border-radius: 3px 0 0 3px;
+}
+
+element-icon {
+  size: 28px;
+  padding: 8px 12px 8px 8px;
+}
+
+element normal.normal,
+element alternate.normal {
+  background-color: var(color-bg);
+  text-color: var(color-fg);
+}
+
+element selected.normal {
+  background-color: var(color-selected-bg);
+  text-color: var(color-selected-fg);
+}

@@ -1,0 +1,83 @@
+#! /bin/sh
+
+sl_install() {
+  local target=sl/$1
+  if [ ! -d $target ]; then
+    git clone https://github.com/Choooks22/$1 $target
+  fi
+  sudo make -C $target clean install
+}
+
+dwm() {
+  sl_install dwm
+}
+
+slstatus() {
+  sl_install slstatus
+}
+
+yay_install() {
+  if command -v yay &> /dev/null; then
+    echo "yay already installed."
+    exit
+  fi
+
+  git clone https://aur.archlinux.org/yay /tmp/yay
+  cd /tmp/yay && makepkg -si
+}
+
+powerlevel10k() {
+  if [ -d p10k ]; then
+    echo "powerlevel10k already installed."
+    exit
+  fi
+
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k p10k
+}
+
+xorg() {
+	sudo pacman -S xorg-server xorg-xinit xorg-xrandr
+}
+
+fonts() {
+  sudo pacman -S \
+    noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra \
+    ttf-jetbrains-mono ttf-font-awesome
+}
+
+audio() {
+  local audio_pkgs="pipewire pipewire-pulse pipewire-media-session"
+	sudo pacman -S $audio_pkgs pipewire-jack alsa-utils
+	systemctl enable --user --now $audio_pkgs
+}
+
+utils() {
+  sudo pacman -S zsh kitty unzip pigz rofi picom feh openssh gnome-keyring
+}
+
+lightdm() {
+	yay -S lightdm lightdm-mini-greeter
+	sudo systemctl enable lightdm
+	sudo sed -i "s/^#greeter-session=.*/greeter-session=lightdm-mini-greeter/" /etc/lightdm/lightdm.conf
+	sudo sed -i "s/^#user-session=.*/user-session=dwm/" /etc/lightdm/lightdm.conf
+	sudo sed -i "s/^user = .*/user = $USER/" /etc/lightdm/lightdm.conf
+}
+
+nvm() {
+	if command -v nvm &> /dev/null; then
+		echo "nvm already installed."
+		exit
+	fi
+	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | sh
+}
+
+apps() {
+  yay -S firefox discord visual-studio-code-bin mpv flameshot
+  nvm
+}
+
+amdgpu() {
+  sudo pacman -S xf86-video-amdgpu vulkan-radeon mesa libva-mesa-driver mesa-vdpau
+}
+
+"$@"

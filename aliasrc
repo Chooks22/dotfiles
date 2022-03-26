@@ -1,0 +1,40 @@
+#! /bin/sh
+
+# basic
+alias \
+  c="clear" \
+  ls="ls --color" \
+  targz="tar -I pigz -cvf" \
+  untargz="tar -I pigz -xvf"
+
+# systemctl
+# sudo
+alias \
+  sck="sudo systemctl kill" \
+  scq="sudo systemctl stop" \
+  scs="sudo systemctl status" \
+  sce="sudo systemctl enable" \
+  scd="sudo systemctl disable" \
+  scr="sudo systemctl restart" \
+  sct="sudo systemctl start" \
+# user
+  scuk="systemctl kill --user" \
+  scuq="systemctl stop --user" \
+  scus="systemctl status --user" \
+  scue="systemctl enable --user" \
+  scud="systemctl disable --user" \
+  scur="systemctl restart --user" \
+  scut="systemctl start --user"
+
+# yarn
+alias \
+  ya="yarn add" \
+  yad="yarn add -D" \
+  yap="yarn add -P" \
+  yin="yarn install" \
+  yrm="yarn remove" \
+  yd="yarn dev" \
+  yl="yarn lint" \
+  yb="yarn build" \
+  ys="yarn start" \
+  yt="yarn test"

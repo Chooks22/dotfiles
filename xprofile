@@ -14,5 +14,5 @@ setxkbmap -option caps:swapescape
 # Enable keyring
 if command -v gnome-keyring-daemon &> /dev/null; then
   eval $(gnome-keyring-daemon --start)
-  export SSH_AUTH_LOCK
+  export SSH_AUTH_SOCK
 fi

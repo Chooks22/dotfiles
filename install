@@ -58,9 +58,10 @@ utils() {
 lightdm() {
 	yay -S lightdm lightdm-mini-greeter
 	sudo systemctl enable lightdm
+
 	sudo sed -i "s/^#greeter-session=.*/greeter-session=lightdm-mini-greeter/" /etc/lightdm/lightdm.conf
 	sudo sed -i "s/^#user-session=.*/user-session=dwm/" /etc/lightdm/lightdm.conf
-	sudo sed -i "s/^user = .*/user = $USER/" /etc/lightdm/lightdm.conf
+	sudo sed -i "s/^user = .*/user = $USER/" /etc/lightdm/lightdm-mini-greeter.conf
 }
 
 nvm() {

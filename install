@@ -36,7 +36,7 @@ powerlevel10k() {
 }
 
 xorg() {
-	sudo pacman -S xorg-server xorg-xinit xorg-xrandr
+	sudo pacman -S xorg-server xorg-xinit xorg-xrandr xorg-xinput
 }
 
 fonts() {

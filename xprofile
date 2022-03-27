@@ -5,6 +5,10 @@ picom -b
 slstatus &
 flameshot &
 
+# Disable mouse accel
+POINTER="Logitech G304" # Find using xinput
+xinput set-prop "pointer:$POINTER" "libinput Accel Profile Enabled" 0, 1
+
 # Swap esc <-> caps
 setxkbmap -option caps:swapescape
 

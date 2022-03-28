@@ -12,7 +12,6 @@ config:
 
 xorg:
 	@./install xorg
-	@ln -srf xinitrc ~/.xinitrc
 	@ln -srf xprofile ~/.xprofile
 
 amdgpu:

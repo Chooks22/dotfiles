@@ -33,6 +33,9 @@ dwm:
 slstatus:
 	@./install slstatus
 
+nvm:
+	@./install nvm_install
+
 yay:
 	@./install yay_install
 

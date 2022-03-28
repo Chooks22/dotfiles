@@ -74,17 +74,19 @@ Type=XSession
 EOF
 }
 
-nvm() {
-	if command -v nvm &> /dev/null; then
+nvm_install() {
+	if command nvm &> /dev/null; then
 		echo "nvm already installed."
 		exit
 	fi
+
+  mkdir $NVM_DIR
 	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | sh
 }
 
 apps() {
-  yay -S firefox discord visual-studio-code-bin mpv flameshot
-  nvm
+  yay -S firefox discord visual-studio-code-bin flameshot
+  nvm_install
 }
 
 amdgpu() {

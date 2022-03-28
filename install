@@ -59,19 +59,23 @@ lightdm() {
 	yay -S lightdm lightdm-mini-greeter
 	sudo systemctl enable lightdm
 
-	sudo sed -i "s/^#greeter-session=.*/greeter-session=lightdm-mini-greeter/" /etc/lightdm/lightdm.conf
-	sudo sed -i "s/^#user-session=.*/user-session=dwm/" /etc/lightdm/lightdm.conf
-	sudo sed -i "s/^user = .*/user = $USER/" /etc/lightdm/lightdm-mini-greeter.conf
+  # Copy config
+  sudo cp lightdm/* /etc/lightdm
+
+  # Update user
+	sudo sed -i "s/^user = CHANGE_ME/user = $USER/" /etc/lightdm/lightdm-mini-greeter.conf
 
   # Create dwm desktop entry
   sudo mkdir -p /usr/share/xsessions
-  sudo tee /usr/share/xsessions &> /dev/null << EOF
-[Desktop Entry]
-Name=dwm
-Comment=Dynamic Window Manager
-Exec=$(which dwm)
-Type=XSession
+  if [ ! -f /usr/share/xsessions/dwm.desktop &> /dev/null ]; then
+    sudo tee /usr/share/xsessions/dwm.desktop &> /dev/null <<-EOF
+	    [Desktop Entry]
+	    Name=dwm
+	    Comment=Dynamic Window Manager
+	    Exec=$(which dwm)
+	    Type=XSession
 EOF
+  fi
 }
 
 nvm_install() {

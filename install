@@ -42,7 +42,7 @@ xorg() {
 fonts() {
   sudo pacman -S \
     noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra \
-    ttf-jetbrains-mono ttf-font-awesome
+    ttf-jetbrains-mono ttf-nerd-fonts-symbols
 }
 
 audio() {
@@ -84,9 +84,14 @@ nvm_install() {
 	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | sh
 }
 
+nnn_install() {
+  sudo pacman -S nnn mpv tree lowdown bat ffmpeg ffmpegthumbnailer w3m
+}
+
 apps() {
   yay -S firefox discord visual-studio-code-bin flameshot
   nvm_install
+  nnn_install
 }
 
 amdgpu() {

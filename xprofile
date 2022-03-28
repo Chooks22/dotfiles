@@ -1,6 +1,9 @@
 #! /bin/sh
 export EDITOR=vim
 
+# set cache dir
+export XDG_CACHE_HOME=$HOME/.cache
+
 picom --experimental-backends -b
 slstatus &
 flameshot &

@@ -18,3 +18,9 @@
 !rofi
 !kitty
 !picom
+
+# nnn config
+!nnn
+nnn/*
+!nnn/nnnrc
+!nnn/plugins

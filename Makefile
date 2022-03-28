@@ -36,6 +36,9 @@ slstatus:
 nvm:
 	@./install nvm_install
 
+nnn:
+	@./install nnn_install
+
 yay:
 	@./install yay_install
 

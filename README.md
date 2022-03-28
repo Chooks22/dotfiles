@@ -9,6 +9,7 @@
 - Launcher: `rofi`
 - Terminal: `kitty`
 - Compositor: `picom`
+- File Manager: `nnn`
 - Editor: `vim`, `visual-studio-code-bin`
 - Color Scheme: Ancient One Dark - Violet
 

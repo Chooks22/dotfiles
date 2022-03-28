@@ -1,0 +1,13 @@
+#! /bin/sh
+
+# set custom aliases
+alias nnn="nnn -P p"
+alias n="nnn"
+
+# set config
+export TERMINAL=kitty
+
+export NNN_FIFO=/tmp/nnn.fifo
+export NNN_PLUG="p:preview-tui"
+
+export NNN_OPTS="dC"

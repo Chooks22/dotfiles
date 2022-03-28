@@ -31,3 +31,8 @@ compinit
 # Init nvm
 export NVM_DIR=$HOME/.config/nvm
 [ -f $NVM_DIR/nvm.sh ] && \. $NVM_DIR/nvm.sh
+
+# Init nnn
+if command -v nnn &> /dev/null; then
+  source ~/.config/nnn/nnnrc
+fi

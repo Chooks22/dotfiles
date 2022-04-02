@@ -1,3 +1,15 @@
+"xrandr -o normal && feh --bg-scale ~/.wallpaper/h/default"
+  Control+Alt + Up
+
+"xrandr -o inverted && feh --bg-scale ~/.wallpaper/h/default"
+  Control+Alt + Down
+
+"xrandr -o left && feh --bg-scale ~/.wallpaper/v/default"
+  Control+Alt + Left
+
+"xrandr -o right && feh --bg-scale ~/.wallpaper/v/default"
+  Control+Alt + Right
+
 "amixer sset Master 5%+"
   XF86AudioRaiseVolume
 

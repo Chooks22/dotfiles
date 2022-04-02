@@ -12,6 +12,7 @@
 !zshrc
 !vimrc
 !aliasrc
+!xbindkeysrc
 
 # include configs
 !rofi

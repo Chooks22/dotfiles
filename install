@@ -52,7 +52,7 @@ audio() {
 }
 
 utils() {
-  sudo pacman -S zsh kitty unzip pigz rofi picom feh openssh gnome-keyring
+  sudo pacman -S zsh kitty unzip pigz rofi picom feh playerctl openssh gnome-keyring
 }
 
 lightdm() {

@@ -1,13 +1,13 @@
-"xrandr -o normal && feh --bg-scale ~/.wallpaper/h/default"
+"xrandr -o normal && feh --bg-fill --no-fehbg ~/.wallpaper/h/default"
   Control+Alt + Up
 
-"xrandr -o inverted && feh --bg-scale ~/.wallpaper/h/default"
+"xrandr -o inverted && feh --bg-fill --no-fehbg ~/.wallpaper/h/default"
   Control+Alt + Down
 
-"xrandr -o left && feh --bg-scale ~/.wallpaper/v/default"
+"xrandr -o left && feh --bg-fill --no-fehbg ~/.wallpaper/v/default"
   Control+Alt + Left
 
-"xrandr -o right && feh --bg-scale ~/.wallpaper/v/default"
+"xrandr -o right && feh --bg-fill --no-fehbg ~/.wallpaper/v/default"
   Control+Alt + Right
 
 "amixer sset Master 5%+"

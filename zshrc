@@ -15,8 +15,6 @@ SAVEHIST=1000
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/chooks/.zshrc'
 
-autoload -Uz compinit
-compinit
 # End of lines added by compinstall
 
 # Powerlevel10k
@@ -36,3 +34,10 @@ export NVM_DIR=$HOME/.config/nvm
 if command -v nnn &> /dev/null; then
   source ~/.config/nnn/nnnrc
 fi
+
+# zsh plugins
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+
+fpath=($fpath /usr/share/zsh/completions)

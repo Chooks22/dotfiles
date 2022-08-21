@@ -1,8 +1,7 @@
 #! /bin/sh
 
 # set custom aliases
-alias nnn="nnn -P p"
-alias n="nnn"
+alias nnn="nnn -P p -T t"
 
 # set config
 export TERMINAL=kitty

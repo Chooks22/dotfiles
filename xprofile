@@ -1,23 +1,47 @@
 #! /bin/sh
+export GTK_IM_MODULE=ibus
+export QT_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+
 export EDITOR=vim
 
 # set cache dir
+export XDG_CONFIG_DIR=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
-
-xbindkeys
-picom --experimental-backends -b
-slstatus &
-flameshot &
-
-# Disable mouse accel
-POINTER="Logitech G304" # Find using xinput
-xinput set-prop "pointer:$POINTER" "libinput Accel Profile Enabled" 0, 1
-
-# Swap esc <-> caps
-setxkbmap -option caps:swapescape
 
 # Set bg
 [ -f ~/.fehbg ] && ~/.fehbg
+
+if command -v picom &> /dev/null; then
+  picom --experimental-backends -b
+fi
+
+if command -v slstatus &> /dev/null; then
+  slstatus &
+fi
+
+if command -v ibus-daemon &> /dev/null; then
+  ibus-daemon -drxR
+fi
+
+if command -v flameshot &> /dev/null; then
+  flameshot &
+fi
+
+if command -v discord &> /dev/null; then
+  discord --start-minimized &
+fi
+
+# Disable mouse accel
+if command -v xinput &> /dev/null; then
+  POINTER="Logitech G304" # Find using xinput
+  xinput set-prop "pointer:$POINTER" "libinput Accel Profile Enabled" 0, 1
+fi
+
+# Swap esc <-> caps
+if command -v setxkbmap &> /dev/null; then
+   setxkbmap -option caps:swapescape
+fi
 
 # Enable keyring
 if command -v gnome-keyring-daemon &> /dev/null; then

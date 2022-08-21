@@ -1,11 +1,10 @@
 #! /bin/sh
 
 # basic
-alias \
-  c="clear" \
-  ls="ls --color" \
-  targz="tar -I pigz -cvf" \
-  untargz="tar -I pigz -xvf"
+alias c="clear"
+alias ls="ls --color"
+alias targz="tar -I pigz -cvf"
+alias untargz="tar -I pigz -xvf"
 
 # user
 alias st="speedtest"
@@ -14,36 +13,33 @@ alias youtube-dl="yt-dlp"
 
 # systemctl
 # sudo
-alias \
-  sck="sudo systemctl kill" \
-  scq="sudo systemctl stop" \
-  scs="sudo systemctl status" \
-  sce="sudo systemctl enable" \
-  scd="sudo systemctl disable" \
-  scr="sudo systemctl restart" \
-  sct="sudo systemctl start"
+alias sck="sudo systemctl kill"
+alias scq="sudo systemctl stop"
+alias scs="sudo systemctl status"
+alias sce="sudo systemctl enable"
+alias scd="sudo systemctl disable"
+alias scr="sudo systemctl restart"
+alias sct="sudo systemctl start"
 # user
-alias \
-  scuk="systemctl kill --user" \
-  scuq="systemctl stop --user" \
-  scus="systemctl status --user" \
-  scue="systemctl enable --user" \
-  scud="systemctl disable --user" \
-  scur="systemctl restart --user" \
-  scut="systemctl start --user"
+alias scuk="systemctl kill --user"
+alias scuq="systemctl stop --user"
+alias scus="systemctl status --user"
+alias scue="systemctl enable --user"
+alias scud="systemctl disable --user"
+alias scur="systemctl restart --user"
+alias scut="systemctl start --user"
 
 # yarn
-alias \
-  ya="yarn add" \
-  yad="yarn add -D" \
-  yap="yarn add -P" \
-  yin="yarn install" \
-  yrm="yarn remove" \
-  yd="yarn dev" \
-  yl="yarn lint" \
-  yb="yarn build" \
-  ys="yarn start" \
-  yt="yarn test"
+alias ya="yarn add"
+alias yad="yarn add -D"
+alias yap="yarn add -P"
+alias yin="yarn install"
+alias yrm="yarn remove"
+alias yd="yarn dev"
+alias yl="yarn lint"
+alias yb="yarn build"
+alias ys="yarn start"
+alias yt="yarn test"
 
 # pnpm
 alias pa="pnpm add"

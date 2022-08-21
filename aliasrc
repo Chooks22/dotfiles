@@ -7,6 +7,11 @@ alias \
   targz="tar -I pigz -cvf" \
   untargz="tar -I pigz -xvf"
 
+# user
+alias st="speedtest"
+alias shut="shutdown now"
+alias youtube-dl="yt-dlp"
+
 # systemctl
 # sudo
 alias \
@@ -39,3 +44,34 @@ alias \
   yb="yarn build" \
   ys="yarn start" \
   yt="yarn test"
+
+# pnpm
+alias pa="pnpm add"
+alias pad="pnpm add -D"
+alias pap="pnpm add -P"
+alias pin="pnpm install"
+alias prm="pnpm rm"
+alias pd="pnpm dev"
+alias pl="pnpm lint"
+alias pb="pnpm build"
+alias pst="pnpm start"
+alias pup="pnpm up"
+
+# docker
+alias d="docker"
+alias db="docker build"
+alias dl="docker logs"
+alias dps="docker ps"
+alias dco="docker container"
+alias dim="docker image"
+alias dims="docker images"
+alias dc="docker-compose"
+alias dcl="docker-compose logs"
+alias dcup="docker-compose up"
+alias dcd="docker-compose down"
+alias dx="docker buildx"
+alias dxb="docker buildx build"
+
+# tauri
+alias ytd="yarn tauri dev"
+alias ytb="yarn tauri build"

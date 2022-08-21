@@ -8,6 +8,7 @@ config:
 	@./install powerlevel10k
 	@ln -srf zshrc ~/.zshrc
 	@ln -srf vimrc ~/.vimrc
+	@ln -srf vim ~/.vim
 	@ln -srf xbindkeysrc ~/.xbindkeysrc
 	@ln -srf aliasrc ~/.aliasrc
 

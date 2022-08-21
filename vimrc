@@ -5,6 +5,8 @@ filetype indent on
 
 " editor
 syntax on
+set termguicolors
+colo ancient-one-dark-violet
 
 set number
 set relativenumber

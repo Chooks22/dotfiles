@@ -27,3 +27,12 @@
 
 "playerctl previous"
   XF86AudioPrev
+
+"flameshot gui"
+  Mod4+Shift + s
+
+"flameshot screen -c"
+  Print
+
+"flameshot screen -p ~/pictures/screenshots"
+  Control + Print

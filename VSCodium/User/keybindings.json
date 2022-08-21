@@ -1,0 +1,222 @@
+[
+  {
+    "key": "ctrl+shift+q",
+    "command": "editor.action.commentLine",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+/",
+    "command": "-editor.action.commentLine",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+enter ctrl+shift+enter",
+    "command": "git.push"
+  },
+  {
+    "key": "ctrl+m",
+    "command": "HookyQR.minify"
+  },
+  {
+    "key": "alt+\\",
+    "command": "workbench.action.toggleStatusbarVisibility"
+  },
+  {
+    "key": "ctrl+'",
+    "command": "editor.action.toggleMinimap"
+  },
+  {
+    "key": "ctrl+;",
+    "command": "editor.emmet.action.wrapWithAbbreviation"
+  },
+  {
+    "key": "ctrl+shift+r",
+    "command": "workbench.action.reloadWindow"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "-workbench.action.reloadWindow",
+    "when": "isDevelopment"
+  },
+  {
+    "key": "ctrl+shift+i",
+    "command": "-overtype.toggle",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+shift+r",
+    "command": "-editor.action.refactor",
+    "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+alt+q",
+    "command": "editor.action.insertSnippet",
+    "args": {
+      "name": "Toggle Eslint"
+    }
+  },
+  {
+    "key": "ctrl+alt+a",
+    "command": "to-es6-template-literal.format",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "-to-es6-template-literal.format",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+alt+o",
+    "command": "editor.action.organizeImports",
+    "when": "editorTextFocus && !editorReadonly && supportedCodeAction =~ /(\\s|^)source\\.organizeImports\\b/"
+  },
+  {
+    "key": "shift+alt+o",
+    "command": "-editor.action.organizeImports",
+    "when": "editorTextFocus && !editorReadonly && supportedCodeAction =~ /(\\s|^)source\\.organizeImports\\b/"
+  },
+  {
+    "key": "ctrl+shift+i",
+    "command": "-editor.action.formatDocument",
+    "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+  },
+  {
+    "key": "alt+x",
+    "command": "editor.action.deleteLines",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+k",
+    "command": "-editor.action.deleteLines",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+k ctrl+alt+a",
+    "command": "git.stageSelectedRanges",
+    "when": "isInDiffEditor"
+  },
+  {
+    "key": "ctrl+k ctrl+alt+s",
+    "command": "-git.stageSelectedRanges",
+    "when": "isInDiffEditor"
+  },
+  {
+    "key": "alt+r",
+    "command": "workbench.view.extension.thunder-client-sidebar-view"
+  },
+  {
+    "key": "shift+4",
+    "command": "-auto.addInterpolation",
+    "when": "editorTextFocus && editorLangId == 'javascriptreact' && vim.mode != 'Normal' && vim.mode != 'Visual' && vim.mode != 'VisualBlock' && vim.mode != 'VisualLine'"
+  },
+  {
+    "key": "shift+4",
+    "command": "-auto.addInterpolation",
+    "when": "editorTextFocus && editorLangId == 'vue' && vim.mode != 'Normal' && vim.mode != 'Visual' && vim.mode != 'VisualBlock' && vim.mode != 'VisualLine'"
+  },
+  {
+    "key": "shift+4",
+    "command": "-auto.addInterpolation",
+    "when": "editorTextFocus && editorLangId == 'typescript' && vim.mode != 'Normal' && vim.mode != 'Visual' && vim.mode != 'VisualBlock' && vim.mode != 'VisualLine'"
+  },
+  {
+    "key": "shift+4",
+    "command": "-auto.addInterpolation",
+    "when": "editorTextFocus && editorLangId == 'typescriptreact' && vim.mode != 'Normal' && vim.mode != 'Visual' && vim.mode != 'VisualBlock' && vim.mode != 'VisualLine'"
+  },
+  {
+    "key": "shift+3",
+    "command": "-auto.addInterpolation",
+    "when": "editorTextFocus && editorLangId == 'crystal' && vim.mode != 'Normal' && vim.mode != 'Visual' && vim.mode != 'VisualBlock' && vim.mode != 'VisualLine'"
+  },
+  {
+    "key": "shift+3",
+    "command": "-auto.addInterpolation",
+    "when": "editorTextFocus && editorLangId == 'ecr' && vim.mode != 'Normal' && vim.mode != 'Visual' && vim.mode != 'VisualBlock' && vim.mode != 'VisualLine'"
+  },
+  {
+    "key": "shift+3",
+    "command": "-auto.addInterpolation",
+    "when": "editorTextFocus && editorLangId == 'ruby' && vim.mode != 'Normal' && vim.mode != 'Visual' && vim.mode != 'VisualBlock' && vim.mode != 'VisualLine'"
+  },
+  {
+    "key": "shift+3",
+    "command": "-auto.addInterpolation",
+    "when": "editorTextFocus && editorLangId == 'coffeescript' && vim.mode != 'Normal' && vim.mode != 'Visual' && vim.mode != 'VisualBlock' && vim.mode != 'VisualLine'"
+  },
+  {
+    "key": "shift+3",
+    "command": "-auto.addInterpolation",
+    "when": "editorTextFocus && editorLangId == 'erb' && vim.mode != 'Normal' && vim.mode != 'Visual' && vim.mode != 'VisualBlock' && vim.mode != 'VisualLine'"
+  },
+  {
+    "key": "shift+3",
+    "command": "-auto.addInterpolation",
+    "when": "editorTextFocus && editorLangId == 'haml' && vim.mode != 'Normal' && vim.mode != 'Visual' && vim.mode != 'VisualBlock' && vim.mode != 'VisualLine'"
+  },
+  {
+    "key": "shift+3",
+    "command": "-auto.addInterpolation",
+    "when": "editorTextFocus && editorLangId == 'slim' && vim.mode != 'Normal' && vim.mode != 'Visual' && vim.mode != 'VisualBlock' && vim.mode != 'VisualLine'"
+  },
+  {
+    "key": "shift+3",
+    "command": "-auto.addInterpolation",
+    "when": "editorTextFocus && editorLangId == 'elixir' && vim.mode != 'Normal' && vim.mode != 'Visual' && vim.mode != 'VisualBlock' && vim.mode != 'VisualLine'"
+  },
+  {
+    "key": "shift+4",
+    "command": "-auto.addInterpolation",
+    "when": "editorTextFocus && editorLangId == 'groovy' && vim.mode != 'Normal' && vim.mode != 'Visual' && vim.mode != 'VisualBlock' && vim.mode != 'VisualLine'"
+  },
+  {
+    "key": "shift+4",
+    "command": "-auto.addInterpolation",
+    "when": "editorTextFocus && editorLangId == 'javascript' && vim.mode != 'Normal' && vim.mode != 'Visual' && vim.mode != 'VisualBlock' && vim.mode != 'VisualLine'"
+  },
+  {
+    "key": "ctrl+alt+1",
+    "command": "workbench.action.toggleZenMode"
+  },
+  {
+    "key": "ctrl+k z",
+    "command": "-workbench.action.toggleZenMode"
+  },
+  {
+    "key": "ctrl+alt+2",
+    "command": "gitlens.toggleZenMode"
+  },
+  {
+    "key": "ctrl+shift+i",
+    "command": "editor.action.formatDocument"
+  },
+  {
+    "key": "ctrl+alt+f",
+    "command": "eslint.executeAutofix"
+  },
+  {
+    "key": "ctrl+numpad9",
+    "command": "npm.runSelectedScript"
+  },
+  {
+    "key": "ctrl+shift+t",
+    "command": "-workbench.view.extension.thunder-client"
+  },
+  {
+    "key": "ctrl+shift+/",
+    "command": "npm.runScript"
+  },
+  {
+    "key": "shift+4",
+    "command": "template-strings.insertArg",
+    "when": "editorTextFocus && editorLangId == 'js' && vim.mode != 'Normal' && vim.mode != 'Visual' && vim.mode != 'VisualBlock' && vim.mode != 'VisualLine'"
+  },
+  {
+    "key": "ctrl+alt+a",
+    "command": "-template-strings.insertArg"
+  },
+  {
+    "key": "ctrl+alt+`",
+    "command": "workbench.action.createTerminalEditor"
+  }
+]

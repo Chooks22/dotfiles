@@ -93,7 +93,7 @@ nnn_install() {
 }
 
 apps() {
-  yay -S firefox discord visual-studio-code-bin flameshot
+  yay -S --needed --noconfirm firefox discord-canary-electron-bin vscodium-bin vscodium-bin-marketplace flameshot
   nvm_install
   nnn_install
 }

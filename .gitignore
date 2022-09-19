@@ -24,6 +24,7 @@ VSCodium/*
 VSCodium/User/*
 !VSCodium/User/keybindings.json
 !VSCodium/User/settings.json
+!VSCodium/User/snippets
 
 # include configs
 !rofi

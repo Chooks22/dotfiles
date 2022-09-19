@@ -202,10 +202,6 @@
 	],
 	"terminal.integrated.minimumContrastRatio": 4,
 	"editor.bracketPairColorization.enabled": true,
-	"javascript.inlayHints.functionLikeReturnTypes.enabled": true,
-	"javascript.inlayHints.parameterNames.enabled": "literals",
-	"typescript.inlayHints.parameterNames.enabled": "all",
-	"javascript.inlayHints.variableTypes.enabled": true,
 	"workbench.editor.untitled.hint": "hidden",
 	"zenMode.hideLineNumbers": false,
 	"markdown.extension.print.theme": "dark",
@@ -234,5 +230,11 @@
 	"editor.formatOnSave": true,
 	"css.lint.unknownAtRules": "ignore",
 	"scss.lint.unknownAtRules": "ignore",
+	"markdown-preview-enhanced.automaticallyShowPreviewOfMarkdownBeingEdited": true,
+	"markdown-preview-enhanced.previewTheme": "github-dark.css",
+	"[jsonc]": {
+		"editor.defaultFormatter": "vscode.json-language-features"
+	},
+	"redhat.telemetry.enabled": false,
 	"editor.minimap.enabled": false,
 }

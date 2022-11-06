@@ -154,6 +154,7 @@
 		"<C-w>": false,
 		"<C-r>": false,
 		"<C-b>": false,
+		"<C-k>": false,
 		"u": false,
 	},
 	"vim.visualModeKeyBindings": [

@@ -93,7 +93,7 @@
   {
     "key": "ctrl+k ctrl+alt+a",
     "command": "git.stageSelectedRanges",
-    "when": "isInDiffEditor"
+    "when": "isInDiffEditor || editorFocus"
   },
   {
     "key": "ctrl+k ctrl+alt+s",

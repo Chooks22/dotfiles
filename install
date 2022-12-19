@@ -1,5 +1,7 @@
 #! /bin/sh
 
+SKIP="--needed --noconfirm"
+
 sl_install() {
   local target=sl/$1
   if [ ! -d $target ]; then
@@ -36,27 +38,27 @@ powerlevel10k() {
 }
 
 xorg() {
-	sudo pacman -S xorg-server xorg-xinit xorg-xrandr xorg-xinput
+	sudo pacman -S $SKIP xorg-server xorg-xinit xorg-xrandr xorg-xinput
 }
 
 fonts() {
-  sudo pacman -S \
+  sudo pacman -S $SKIP \
     noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra \
     ttf-jetbrains-mono ttf-nerd-fonts-symbols-common ttf-nerd-fonts-symbols-2048-em
 }
 
 audio() {
   local audio_pkgs="pipewire pipewire-pulse pipewire-media-session"
-	sudo pacman -S $audio_pkgs pipewire-jack alsa-utils
+	sudo pacman -S $SKIP $audio_pkgs pipewire-jack alsa-utils
 	systemctl enable --user --now $audio_pkgs
 }
 
 utils() {
-  sudo pacman -S zsh kitty unzip pigz rofi picom feh playerctl openssh gnome-keyring
+  sudo pacman -S $SKIP zsh kitty unzip pigz rofi picom feh playerctl openssh gnome-keyring
 }
 
 lightdm() {
-	yay -S lightdm lightdm-mini-greeter
+	yay -S $SKIP lightdm lightdm-mini-greeter
 	sudo systemctl enable lightdm
 
   # Copy config
@@ -89,17 +91,17 @@ nvm_install() {
 }
 
 nnn_install() {
-  sudo pacman -S nnn mpv tree lowdown bat ffmpeg ffmpegthumbnailer w3m
+  sudo pacman -S $SKIP nnn mpv tree lowdown bat ffmpeg ffmpegthumbnailer w3m
 }
 
 apps() {
-  yay -S --needed --noconfirm firefox discord-canary-electron-bin vscodium-bin vscodium-bin-marketplace flameshot
+  yay -S $SKIP firefox discord-canary-electron-bin vscodium-bin vscodium-bin-marketplace flameshot
   nvm_install
   nnn_install
 }
 
 amdgpu() {
-  sudo pacman -S xf86-video-amdgpu vulkan-radeon mesa libva-mesa-driver mesa-vdpau
+  sudo pacman -S $SKIP xf86-video-amdgpu vulkan-radeon mesa libva-mesa-driver mesa-vdpau
 }
 
 "$@"

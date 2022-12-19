@@ -11,6 +11,7 @@ config:
 	@ln -srf vim ~/.vim
 	@ln -srf xbindkeysrc ~/.xbindkeysrc
 	@ln -srf aliasrc ~/.aliasrc
+	@./install zsh_plugins
 
 xorg:
 	@./install xorg

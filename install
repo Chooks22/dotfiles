@@ -10,6 +10,24 @@ sl_install() {
   sudo make -C $target clean install
 }
 
+zsh_plugin_install() {
+  plugin="zsh-$1"
+
+  if [ -d $plugin ]; then
+    cd $plugin
+    git pull
+  else
+    git clone https://github.com/zsh-users/$plugin
+  fi
+}
+
+zsh_plugins() {
+  mkdir -p plugins
+  cd plugins
+  zsh_plugin_install autosuggestions
+  zsh_plugin_install syntax-highlighting
+}
+
 dwm() {
   sl_install dwm
 }

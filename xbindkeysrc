@@ -10,13 +10,13 @@
 "xrandr -o right && feh --bg-fill --no-fehbg ~/.wallpaper/v/default"
   Control+Alt + Right
 
-"amixer sset Master 5%+"
+"pw-volume change +1%"
   XF86AudioRaiseVolume
 
-"amixer sset Master 5%-"
+"pw-volume change -1%"
   XF86AudioLowerVolume
 
-"amixer sset Master toggle"
+"pw-volume mute toggle"
   XF86AudioMute
 
 "playerctl play-pause"

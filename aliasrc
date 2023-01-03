@@ -5,6 +5,7 @@ alias c="clear"
 alias ls="ls --color"
 alias targz="tar -I pigz -cvf"
 alias untargz="tar -I pigz -xvf"
+alias steam="steam-native"
 
 # user
 alias st="speedtest"

@@ -36,8 +36,8 @@ if command -v nnn &> /dev/null; then
 fi
 
 # zsh plugins
-source $XDG_CONFIG_DIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $XDG_CONFIG_DIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+[ -s "$XDG_CONFIG_DIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh" ] && source $XDG_CONFIG_DIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+[ -s "$XDG_CONFIG_DIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ] && source $XDG_CONFIG_DIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 fpath=($fpath /usr/share/zsh/completions)
 

@@ -10,13 +10,13 @@
 "xrandr -o right && feh --bg-fill --no-fehbg ~/.wallpaper/v/default"
   Control+Alt + Right
 
-"pw-volume change +1%"
+"pamixer -i 2"
   XF86AudioRaiseVolume
 
-"pw-volume change -1%"
+"pamixer -d 2"
   XF86AudioLowerVolume
 
-"pw-volume mute toggle"
+"pamixer -t"
   XF86AudioMute
 
 "playerctl play-pause"

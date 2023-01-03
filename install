@@ -67,7 +67,7 @@ fonts() {
 
 audio() {
   local audio_pkgs="pipewire pipewire-pulse wireplumber"
-	sudo pacman -S $SKIP $audio_pkgs pipewire-jack alsa-utils
+	sudo pacman -S $SKIP $audio_pkgs pipewire-jack alsa-utils pamixer
 	systemctl enable --user --now $audio_pkgs
 }
 

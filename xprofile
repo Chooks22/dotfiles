@@ -1,9 +1,5 @@
 #! /bin/sh
 
-exists() {
-  command -v $1 &> /dev/null
-}
-
 # Env Vars
 
 export GTK_IM_MODULE=ibus
@@ -15,83 +11,4 @@ export EDITOR=vim
 export XDG_CONFIG_DIR=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
 
-# Init system
-
-## Set bg
-[ -f ~/.fehbg ] && ~/.fehbg
-
-## Enable compositor
-if exists picom; then
-  picom -b
-fi
-
-## Start bar
-if exists slstatus; then
-  slstatus
-fi &
-
-## Swap esc <-> caps
-if exists setxkbmap; then
-  setxkbmap -option caps:escape
-fi &
-
-## Load keyboard shortcuts
-if exists xbindkeys; then
-  xbindkeys
-fi &
-
-## Turn on numlock
-if exists numlockx; then
-  numlockx
-fi
-
-## Start ibus
-if exists ibus-daemon; then
-  ibus-daemon -drxR
-fi &
-
-## Enable keyring
-if exists gnome-keyring-daemon; then
-  eval $(gnome-keyring-daemon --start)
-  export SSH_AUTH_SOCK
-fi &
-
-## Disable mouse accel
-if exists xinput; then
-  POINTER="Logitech G304" # Find using xinput
-  xinput set-prop "pointer:$POINTER" "libinput Accel Profile Enabled" 0, 1
-fi &
-
-# Background apps
-
-## Run steam in background
-if exists steam-native; then
-  steam-native -silent
-fi &
-
-## Startup ssh agent
-if exists ssh-agent; then
-  eval $(ssh-agent)
-fi
-
-## Start screenshot tool
-if exists flameshot; then
-  flameshot
-fi &
-
-## Start discord
-if exists discord; then
-  discord --start-minimized
-fi &
-
-## Start qbittorrent
-if exists qbittorrent; then
-  qbittorrent
-fi &
-
-## Start viber
-if exists viber; then
-  viber # TODO: start minimized
-fi &
-
-export DENO_DEPLOY_TOKEN="ddp_zZj88XNlcrmk1jjElKgDmSZCLn0LhD1PbpAZ"
+find $XDG_CONFIG_DIR/autostart.d -type f -exec bash -c '"{}" &' \;

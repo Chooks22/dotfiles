@@ -14,6 +14,10 @@
 !aliasrc
 !xbindkeysrc
 
+# autostart
+!autostart.d
+autostart.d/.*
+
 # vim
 !vim
 

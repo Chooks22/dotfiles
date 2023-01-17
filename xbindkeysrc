@@ -10,10 +10,10 @@
 "xrandr -o right && feh --bg-fill --no-fehbg ~/.wallpaper/v/default"
   Control+Alt + Right
 
-"pamixer -i 2"
+"pamixer -ui 2"
   XF86AudioRaiseVolume
 
-"pamixer -d 2"
+"pamixer -ud 2"
   XF86AudioLowerVolume
 
 "pamixer -t"

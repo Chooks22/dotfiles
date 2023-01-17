@@ -1,2 +1,2 @@
 #!/bin/sh
-ibus -drxR
+ibus-daemon -drxR

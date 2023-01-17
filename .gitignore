@@ -21,6 +21,9 @@ autostart.d/.*
 # vim
 !vim
 
+# awesome
+!awesome
+
 # vscodium
 !VSCodium
 VSCodium/*

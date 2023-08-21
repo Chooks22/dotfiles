@@ -41,3 +41,10 @@ VSCodium/User/*
 nnn/*
 !nnn/nnnrc
 !nnn/plugins
+
+# new wayland stuff
+!hypr
+!nvim
+!eww
+!xdg-desktop-portal-termfilechooser
+!.zshrc

@@ -1,0 +1,28 @@
+(defwindow bar
+  :monitor 0
+  :geometry (geometry
+    :y 0
+    :height "32px"
+    :width "100%"
+    :anchor "top center"
+  )
+  :stacking "fg"
+  :exclusive true
+  :windowtype "dock"
+(contents))
+
+(defpoll time_hour :interval "1m" "date +\%H")
+(defpoll time_min :interval "1m" "date +\%M")
+(defpoll time_sec :interval "1s" "date +\%S")
+
+(defwidget contents []
+  (box
+    (box "foo")
+    (box :space-evenly false :spacing 3 :halign "end"
+      (label :text time_hour)
+      (label :text time_min)
+      (label :text time_sec)
+    )
+  )
+)
+

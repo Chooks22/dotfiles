@@ -244,12 +244,16 @@ require('lazy').setup({
 -- Set highlight on search
 vim.o.hlsearch = true
 vim.o.incsearch = true
+
 -- chooks: remove highlight on esc
 vim.keymap.set('n', '<esc>', ':noh<return>')
 
 -- Make line numbers default
 vim.wo.number = true
 vim.wo.relativenumber = true
+
+-- chooks: highlight current line
+vim.o.cursorline = true
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
@@ -318,6 +322,9 @@ require('telescope').setup {
 
 -- Enable telescope fzf native, if installed
 pcall(require('telescope').load_extension, 'fzf')
+
+-- chooks: keymaps
+vim.keymap.set('n', '<leader>t', ':bo 80 vs | ter<cr>i', { desc = 'Open [T]erminal' })
 
 -- See `:help telescope.builtin`
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })

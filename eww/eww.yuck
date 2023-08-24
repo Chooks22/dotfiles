@@ -11,17 +11,13 @@
   :windowtype "dock"
 (contents))
 
-(defpoll time_hour :interval "1m" "date +\%H")
-(defpoll time_min :interval "1m" "date +\%M")
-(defpoll time_sec :interval "1s" "date +\%S")
+(defpoll time :interval "1s" "date '+%a %b %d, %T'")
 
 (defwidget contents []
   (box
-    (box "foo")
+    (box "")
     (box :space-evenly false :spacing 3 :halign "end"
-      (label :text time_hour)
-      (label :text time_min)
-      (label :text time_sec)
+      (label :text time)
     )
   )
 )

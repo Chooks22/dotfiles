@@ -1,24 +1,32 @@
-(defwindow bar
-  :monitor 0
-  :geometry (geometry
-    :y 0
-    :height "32px"
-    :width "100%"
-    :anchor "top center"
-  )
-  :stacking "fg"
-  :exclusive true
-  :windowtype "dock"
-(contents))
+(defwindow bar :monitor 0
+               :geometry (geometry :y "0px"
+                                   :height "32px"
+                                   :width "100%"
+                                   :anchor "top center")
+               :stacking "fg"
+               :exclusive true
+               :windowtype "dock"
+  (contents))
 
 (defpoll time :interval "1s" "date '+%a %b %d, %T'")
+
+(defwidget dot []
+  (label :class "dot" :text ""))
+
+(defwidget resource [?class value]
+  (overlay :class class
+    (circular-progress :class "circular-progress"
+                       :value value
+                       :width 20
+                       :thickness 3)
+    (dot)))
 
 (defwidget contents []
   (box
     (box "")
     (box :space-evenly false :spacing 3 :halign "end"
-      (label :text time)
-    )
-  )
-)
-
+      (systray)
+      (resource :class "cpu" :value "${EWW_CPU.avg}")
+      (resource :class "mem" :value "${EWW_RAM.free_mem / EWW_RAM.total_mem * 100}")
+      (label :text time))))
+ 

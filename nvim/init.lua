@@ -438,13 +438,25 @@ local on_attach = function(_, bufnr)
   --
   -- In this case, we create a function that lets us more easily define mappings specific
   -- for LSP related items. It sets the mode, buffer and description for us each time.
-  local nmap = function(keys, func, desc)
+  local map = function(mode, keys, func, desc)
     if desc then
       desc = 'LSP: ' .. desc
     end
 
-    vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
+    vim.keymap.set(mode, keys, func, { buffer = bufnr, desc = desc })
   end
+
+  local nmap = function(keys, func, desc)
+    map('n', keys, func, desc)
+  end
+
+  local imap = function(keys, func, desc)
+    map('i', keys, func, desc)
+  end
+
+  -- chooks: vscode
+  imap('<F2>', vim.lsp.buf.rename, 'Rename')
+  nmap('<F2>', vim.lsp.buf.rename, 'Rename')
 
   nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
   nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')

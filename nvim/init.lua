@@ -222,6 +222,14 @@ require('lazy').setup({
   -- { import = 'custom.plugins' },
 
   {
+    'elkowar/yuck.vim'
+  },
+
+  {
+    'gpanders/nvim-parinfer',
+  },
+
+  {
     -- chooks: adds colour previews to hex codes, etc.
     'NvChad/nvim-colorizer.lua',
     config = function()

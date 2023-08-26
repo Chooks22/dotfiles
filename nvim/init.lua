@@ -132,6 +132,17 @@ require('lazy').setup({
   },
 
   {
+    'kdheepak/lazygit.nvim',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope.nvim',
+    },
+    setup = function()
+      require('telescope').load_extension('lazygit')
+    end,
+  },
+
+  {
     -- Theme inspired by Atom
     -- 'navarasu/onedark.nvim',
     dir = '~/.config/ancient-onedark.nvim',
@@ -431,6 +442,9 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous dia
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+
+-- chooks: lazygit
+vim.keymap.set('n', '<leader>gg', ':LazyGit<cr>', { desc = 'Lazy Git' })
 
 -- [[ Configure LSP ]]
 --  This function gets run when an LSP connects to a particular buffer.

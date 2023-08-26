@@ -1,32 +1,49 @@
-(defwindow bar :monitor 0
-               :geometry (geometry :y "0px"
-                                   :height "32px"
-                                   :width "100%"
-                                   :anchor "top center")
-               :stacking "fg"
-               :exclusive true
-               :windowtype "dock"
+(defwindow bar0
+  :monitor 0
+  :geometry (geometry :height "32px" :width "100%" :anchor "top center")
+  :exclusive true
   (contents))
 
-(defpoll time :interval "1s" "date '+%a %b %d, %T'")
+(defwindow bar1
+  :monitor 1
+  :geometry (geometry :height "32px" :width "100%" :anchor "top center")
+  :exclusive true
+  (contents))
 
-(defwidget dot []
-  (label :class "dot" :text ""))
+(defvar spacing 16)
+(defpoll time :interval "1s" "date '+%a %b %d %T'")
+(deflisten volume "stdbuf -o0 tail -F /tmp/volume")
 
-(defwidget resource [?class value]
-  (overlay :class class
-    (circular-progress :class "circular-progress"
-                       :value value
-                       :width 20
-                       :thickness 3)
-    (dot)))
+(defwidget sys-resource [?name value]
+  (overlay :class name
+    (circular-progress
+      :class "circular-progress"
+      :width 20
+      :thickness 3
+      :start-at 75
+      :clockwise false
+      :value value)
+    (label :class "dot" :text "")))
 
+(defwidget system []
+  (box :spacing spacing
+    (sys-resource :name "cpu" :value "${EWW_CPU.avg}")
+    (sys-resource :name "mem" :value "${EWW_RAM.free_mem / EWW_RAM.total_mem * 100}")
+    (overlay
+      (sys-resource :name "vol" :value volume)
+      (circular-progress :class "vol-max" :width 20 :thickness 3 :start-at 75 :clockwise false :value {volume - 100}))))
+
+;; hack: we overlay contents on top of a bg box so we can have transparent backgrounds
+;; without affecting opacity of the actual contents.
+;;
+;; reason why we stack everything instead of just bg + contents container is because
+;; bg is "on top" in gtk tree, so bg eats the click events basically blocking systray
 (defwidget contents []
-  (box
-    (box "")
-    (box :space-evenly false :spacing 3 :halign "end"
+  (overlay
+    (box :class "bg")
+    (box :space-evenly false :spacing spacing :halign "start" :class "contents"
+      (label :class "hero-icon" :text ""))
+    (box :space-evenly false :spacing spacing :halign "end" :class "contents"
       (systray)
-      (resource :class "cpu" :value "${EWW_CPU.avg}")
-      (resource :class "mem" :value "${EWW_RAM.free_mem / EWW_RAM.total_mem * 100}")
-      (label :text time))))
- 
+      (system)
+      (label :class "time" :text time))))

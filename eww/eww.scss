@@ -1,16 +1,54 @@
 * {
   all: unset;
-  font-family: 'SF Mono Pro Display';
+  font-family: 'SF Pro Display';
   font-weight: 500;
 }
 
-.bar {
+menu {
+  background-color: #2d2b49;
+  border-radius: 4px;
+  padding: 4px 0px;
+}
+
+menuitem {
+  margin: 0px 8px;
+
+  // fix margin on top of spacing
+  &:last-child {
+    margin: 0 0 0 8px;
+  }
+}
+
+menu menuitem {
+  margin: 0;
+  padding: 4px 32px 4px 24px;
+
+  &:hover {
+    background-color: #3d3552;
+  }
+}
+
+separator {
+  background-color: #3d3552;
+  margin: 2px 0px;
+  padding-top: 1px;
+}
+
+.bg {
   background-color: #241e3d;
+  opacity: 0.6;
+}
+
+.bar {
   color: #c0bbcb;
 }
 
-label {
-  margin: 0 8px 0 0;
+.contents {
+  padding: 0px 8px;
+}
+
+.time {
+  font-family: 'SF Mono';
 }
 
 .mem {
@@ -22,10 +60,24 @@ label {
 }
 
 .circular-progress {
-  background: #3d3552;
+  background: #19152a;
+}
+
+.vol {
+  color: #8087ee;
+}
+
+.vol-max {
+  color: #75bcff;
 }
 
 .dot {
-  margin-left: 6px;
+  margin-right: 2px;
   font-size: 9px;
+}
+
+.div {
+  margin: 0px 8px;
+  font-size: 24px;
+  font-weight: 100;
 }

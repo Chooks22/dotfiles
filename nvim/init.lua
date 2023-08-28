@@ -77,6 +77,33 @@ require('lazy').setup({
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
   {
+    'pmizio/typescript-tools.nvim',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'neovim/nvim-lspconfig',
+    },
+    opts = {},
+  },
+
+  {
+    'VonHeikemen/lsp-zero.nvim',
+    branch = 'v2.x',
+    dependencies = {
+      -- LSP Support
+      {'neovim/nvim-lspconfig'},             -- Required
+      {'williamboman/mason.nvim'},           -- Optional
+      {'williamboman/mason-lspconfig.nvim'}, -- Optional
+
+      -- Autocompletion
+      {'hrsh7th/nvim-cmp'},     -- Required
+      {'hrsh7th/cmp-nvim-lsp'}, -- Required
+      {'L3MON4D3/LuaSnip'},     -- Required
+    },
+    config = function()
+    end
+  },
+
+  {
     -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
     dependencies = {
@@ -129,6 +156,17 @@ require('lazy').setup({
         vim.keymap.set('n', '<leader>ph', require('gitsigns').preview_hunk, { buffer = bufnr, desc = '[P]review [H]unk' })
       end,
     },
+  },
+
+  {
+    'm4xshen/autoclose.nvim',
+    config = function()
+      require('autoclose').setup {}
+    end,
+  },
+
+  {
+    'farmergreg/vim-lastplace',
   },
 
   {
@@ -262,8 +300,34 @@ require('lazy').setup({
       require('tailwindcss-colors').setup {}
     end
   },
+
+  {
+    'ray-x/lsp_signature.nvim',
+    config = function(_, opts)
+      require('lsp_signature').setup(opts)
+    end
+  },
 }, {})
 
+local lsp = require('lsp-zero').preset({})
+
+lsp.on_attach(function (client, bufnr)
+  lsp.default_keymaps({buffer = bufnr})
+end)
+
+lsp.configure('jsonls', {
+    filetypes = {'json', 'jsonc'},
+    json = {
+      schemas = {
+        {
+          fileMatch = {'tsconfig*.json'},
+          url = 'https://json.schemastore.org/tsconfig.json',
+        },
+      },
+    },
+})
+
+lsp.setup()
 -- [[ Setting options ]]
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
@@ -319,6 +383,9 @@ vim.o.termguicolors = true
 -- See `:help vim.keymap.set()`
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
+-- chooks: disable wrap
+vim.o.wrap = false
+
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
@@ -351,7 +418,8 @@ require('telescope').setup {
 pcall(require('telescope').load_extension, 'fzf')
 
 -- chooks: keymaps
-vim.keymap.set('n', '<leader>t', ':bo 80 vs | ter<cr>i', { desc = 'Open [T]erminal' })
+vim.keymap.set('n', '<leader>tv', ':bo 80 vs | ter<cr>i', { desc = 'Open [T]erminal [V]ertically' })
+vim.keymap.set('n', '<leader>th', ':bel 12 sp | ter<cr>i', { desc = 'Open [T]erminal [H]orizontally' })
 
 -- See `:help telescope.builtin`
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })

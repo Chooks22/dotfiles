@@ -39,7 +39,7 @@ VSCodium/User/*
 # nnn config
 !nnn
 nnn/*
-!nnn/nnnrc
+!nnn/.nnnrc
 !nnn/plugins
 
 # new wayland stuff

@@ -1,0 +1,52 @@
+* {
+  all: unset;
+}
+
+window {
+  font-family: 'SF Pro Display';
+  font-size: 18px;
+  color: #c0bbcb;
+}
+
+#outer-box {
+  background-color: #19152a;
+}
+
+#inner-box {
+  background-color: #241e3d;
+}
+
+#input {
+  margin: 8px;
+  padding: 12px 16px;
+  border-radius: 4px;
+  background-color: #241e3d;
+  border: 2px solid #40365a;
+}
+
+#input:focus {
+  border-color: #8773b5;
+}
+
+#input > image.left {
+  font-size: 24px;
+  margin-right: 24px;
+}
+
+#entry {
+  margin: 0px 8px;
+  padding: 12px 16px;
+  border-radius: 4px;
+}
+
+#entry image {
+  margin-right: 16px;
+}
+
+#entry:selected {
+  background-color: #2d2b49;
+}
+
+#entry:hover {
+  background-color: #fff;
+}

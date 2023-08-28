@@ -35,6 +35,7 @@ VSCodium/User/*
 !kitty
 !picom
 !lightdm
+!wofi
 
 # nnn config
 !nnn

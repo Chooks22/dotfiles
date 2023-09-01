@@ -307,7 +307,25 @@ require('lazy').setup({
       require('lsp_signature').setup(opts)
     end
   },
+
+  {
+    'nvim-tree/nvim-tree.lua',
+    config = function()
+      require('nvim-tree').setup {
+        on_attach = function(bufnr)
+          local api = require('nvim-tree.api')
+
+          api.config.mappings.default_on_attach(bufnr)
+          vim.keymap.set('n', 'l', api.node.open.edit, { buffer = bufnr })
+          vim.keymap.set('n', '<C-f>', api.tree.search_node, { buffer = bufnr })
+        end
+      }
+    end
+  },
+
 }, {})
+
+vim.keymap.set('n', '<C-b>', ':NvimTreeToggle<cr>')
 
 local lsp = require('lsp-zero').preset({})
 

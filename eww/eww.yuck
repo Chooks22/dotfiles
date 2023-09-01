@@ -28,7 +28,7 @@
 (defwidget system []
   (box :spacing spacing
     (sys-resource :name "cpu" :value "${EWW_CPU.avg}")
-    (sys-resource :name "mem" :value "${EWW_RAM.free_mem / EWW_RAM.total_mem * 100}")
+    (sys-resource :name "mem" :value "${(1 - EWW_RAM.free_mem / EWW_RAM.total_mem) * 100}")
     (overlay
       (sys-resource :name "vol" :value volume)
       (circular-progress :class "vol-max" :width 20 :thickness 3 :start-at 75 :clockwise false :value {volume - 100}))))

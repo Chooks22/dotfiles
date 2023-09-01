@@ -323,6 +323,14 @@ require('lazy').setup({
     end
   },
 
+  {
+    'akinsho/toggleterm.nvim',
+    config = function()
+      require('toggleterm').setup {
+        open_mapping = [[<C-`>]]
+      }
+    end,
+  },
 }, {})
 
 vim.keymap.set('n', '<C-b>', ':NvimTreeToggle<cr>')
